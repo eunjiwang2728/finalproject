@@ -12,6 +12,7 @@ updating...
 - update test videos
 - update main Readme.md
 - Add requirements.txt
+- Update codes related to gaze tracking
 
 
 ## Test sourses download
