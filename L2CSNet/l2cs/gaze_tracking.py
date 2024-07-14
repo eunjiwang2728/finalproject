@@ -9,7 +9,7 @@ def gaze_tracking(callback, camera_index=0):
     gaze_pipeline = Pipeline(
         weights='L2CSNet_gaze360.pkl',
         arch='ResNet50',
-        device=torch.device('cuda')  # or 'cuda' if available
+        device=torch.device('cpu')  # or 'cuda' if available
     )
 
     stability_pitch_threshold = 0.3
@@ -34,10 +34,10 @@ def gaze_tracking(callback, camera_index=0):
                 print("Can't receive frame (stream end?). Exiting ...")
                 break
 
-            # 缩小图像尺寸并转换为灰度图像
+           
             #small_frame = cv2.resize(frame, (0, 0), fx=0.5, fy=0.5)
             gray_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-            gray_frame = cv2.cvtColor(gray_frame, cv2.COLOR_GRAY2BGR)  # 将灰度图像转换回三通道
+            gray_frame = cv2.cvtColor(gray_frame, cv2.COLOR_GRAY2BGR)  
 
             results = gaze_pipeline.step(gray_frame)
 
@@ -50,7 +50,7 @@ def gaze_tracking(callback, camera_index=0):
             stability_status = "Stable" if pitch_std < stability_pitch_threshold and yaw_std < stability_yaw_threshold else "Unstable"
             looking_status = "Looking" if gaze_pitch_threshold_min < abs(pitch) < gaze_pitch_threshold_max and gaze_yaw_threshold_min < abs(yaw) < gaze_yaw_threshold_max else "Not Looking"
 
-            # render(frame, results)  # 保持原始图像大小用于渲染
+      
             callback(frame, stability_status, looking_status)
 
             if cv2.waitKey(1) == ord('q'):
