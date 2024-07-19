@@ -15,6 +15,13 @@ updating...
 - Update codes related to gaze tracking
 
 
+### 2024/7/19
+
+- update code for voice emotion recognition
+- update code for facial emotion recognition
+- update code for filler words detection
+
+
 ## Test sourses download
 Google Drive: [link](https://drive.google.com/drive/folders/1L78xrwCCMi8O8vtlLheJ2npxZR_-2MQI?usp=drive_link)
 
