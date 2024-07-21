@@ -21,6 +21,10 @@ updating...
 - update code for facial emotion recognition
 - update code for filler words detection
 
+### 2024/7/21
+
+- update code for usermode interface
+
 
 ## Test sourses download
 Google Drive: [link](https://drive.google.com/drive/folders/1L78xrwCCMi8O8vtlLheJ2npxZR_-2MQI?usp=drive_link)
